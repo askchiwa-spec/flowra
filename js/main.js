@@ -200,34 +200,35 @@
   }
 
   if (form) {
-    form.addEventListener('submit', async e => {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
       const btn  = form.querySelector('.submit-btn');
       const orig = btn.textContent;
       btn.textContent = 'Sending…';
       btn.disabled    = true;
 
-      try {
-        const payload = Object.fromEntries(new FormData(form));
-        const res  = await fetch('https://api.web3forms.com/submit', {
-          method:  'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body:    JSON.stringify(payload)
-        });
-        const data = await res.json();
+      var data = new FormData(form);
 
-        if (data.success) {
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body:   data
+      })
+      .then(function(res) { return res.json(); })
+      .then(function(json) {
+        if (json.success) {
           form.reset();
           showToast('Message sent! We\'ll respond within 24 hours. ✓');
         } else {
-          showToast('Something went wrong — please email business@flowratech.com directly.');
+          showToast('Error: ' + (json.message || 'Please email business@flowratech.com'));
         }
-      } catch {
+      })
+      .catch(function(err) {
         showToast('Network error — please email business@flowratech.com directly.');
-      } finally {
+      })
+      .finally(function() {
         btn.textContent = orig;
         btn.disabled    = false;
-      }
+      });
     });
   }
 
