@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FlowrA Technology Africa Limited — AI-powered, WhatsApp-native business infrastructure for African enterprises. Chatisha, WATU HCM, Akili AI. Built in Dar es Salaam.">
+  <meta name="keywords" content="FlowrA, Tanzania, Africa, HR software, WhatsApp automation, AI business tools, Chatisha, WATU HCM, Akili AI, Dar es Salaam">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="FlowrA Technology Africa — Where Business Flows and Africa Grows">
+  <meta property="og:description" content="AI-powered, WhatsApp-native business infrastructure built in Africa for Africa. Chatisha · WATU HCM · Akili AI.">
+  <meta property="og:image" content="images/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.flowratech.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FlowrA Technology Africa">
+  <meta name="twitter:description" content="Where business flows and Africa grows.">
+  <meta name="twitter:image" content="images/og-image.jpg">
+  <title>FlowrA Technology Africa Limited — Where Business Flows and Africa Grows</title>
+
+  <link rel="icon" href="images/flowra-logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" href="images/hero-bg.png" as="image">
+
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Site watermark — lion logo ghost -->
+  <div class="site-watermark" aria-hidden="true"></div>
+
+  <!-- Progress Bar -->
+  <div id="progress-bar" aria-hidden="true"></div>
+
+  <!-- Loader -->
+  <div id="loader" aria-hidden="true" role="status">
+    <div class="loader-logo">Flowr<span>A</span></div>
+    <div class="loader-tagline">Where business flows and Africa grows</div>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div id="cursor-dot"  aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Toast Notification -->
+  <div id="toast" role="alert" aria-live="polite">
+    <div class="toast-icon">✓</div>
+    <span class="toast-msg"></span>
+  </div>
+
+  <!-- ════════════════ NAV ════════════════ -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <a href="#home" class="nav-logo" aria-label="FlowrA Home">
+        <img src="images/flowra-logo.png" alt="FlowrA" class="nav-logo-img">
+        <div>
+          <div class="nav-logo-mark">Flowr<span>A</span></div>
+          <div class="nav-logo-sub">Technology Africa Limited</div>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#enterprise">Enterprise</a>
+        <a href="#custom">Custom</a>
+        <a href="#team">Team</a>
+        <a href="#vision">Vision 2030</a>
+        <a href="#contact" class="nav-cta">Talk to us</a>
+      </div>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark/light mode">
+          <!-- Moon: shown in light mode -->
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <!-- Sun: shown in dark mode -->
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1"  x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22"  x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1"  y1="12" x2="3"  y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+        <button class="ham" id="ham" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mob-menu" id="mob-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="#home"       onclick="closeMob()">Home</a>
+    <a href="#about"      onclick="closeMob()">About</a>
+    <a href="#products"   onclick="closeMob()">Products</a>
+    <a href="#enterprise" onclick="closeMob()">Enterprise</a>
+    <a href="#custom"     onclick="closeMob()">Custom Solutions</a>
+    <a href="#team"       onclick="closeMob()">Our Team</a>
+    <a href="#vision"     onclick="closeMob()">Vision 2030</a>
+    <a href="#contact"    onclick="closeMob()" class="mob-cta">Talk to us →</a>
+  </div>
+
+  <!-- ════════════════ HERO ════════════════ -->
+  <section id="home">
+    <div id="hero">
+
+      <!-- Background layers -->
+      <div class="hero-mesh"  aria-hidden="true"></div>
+      <div class="hero-grid"  aria-hidden="true"></div>
+
+      <!-- Floating words -->
+      <div class="floating-words" aria-hidden="true">
+        <span class="fw" style="--x:2%;  --y:8%;  --sz:clamp(4rem,10vw,12rem); --dur:22s; --dly:0s">FLOW</span>
+        <span class="fw" style="--x:54%; --y:52%; --sz:clamp(5rem,14vw,18rem); --dur:29s; --dly:-6s">AFRICA</span>
+        <span class="fw" style="--x:14%; --y:65%; --sz:clamp(3.5rem,8vw,10rem);--dur:20s; --dly:-10s">GROW</span>
+        <span class="fw" style="--x:68%; --y:6%;  --sz:clamp(4rem,11vw,14rem); --dur:25s; --dly:-14s">WATU</span>
+        <span class="fw" style="--x:36%; --y:28%; --sz:clamp(3rem,7vw,9rem);   --dur:33s; --dly:-4s">AKILI</span>
+        <span class="fw" style="--x:72%; --y:70%; --sz:clamp(3.5rem,9vw,11rem);--dur:27s; --dly:-18s">CONNECT</span>
+        <span class="fw" style="--x:3%;  --y:83%; --sz:clamp(3rem,6vw,8rem);   --dur:21s; --dly:-8s">INNOVATE</span>
+        <span class="fw" style="--x:46%; --y:78%; --sz:clamp(3.5rem,8vw,10rem);--dur:24s; --dly:-12s">AUTOMATE</span>
+      </div>
+
+      <!-- Hero content grid -->
+      <div class="hero-inner">
+
+        <!-- Left: text -->
+        <div class="hero-content">
+          <div class="hero-badge a1">
+            <span class="hero-badge-dot"></span>
+            Dar es Salaam, Tanzania · Est. 2024
+          </div>
+          <h1 class="hero-h1 a2">
+            Where business <em>flows</em><br>and Africa <em>grows.</em>
+          </h1>
+          <p class="hero-sub a3">FlowrA builds AI-powered, WhatsApp-native business infrastructure for African enterprises. From customer communication to HR and marketing intelligence — we make African business flow.</p>
+          <div class="hero-btns a4">
+            <a href="#products"   class="btn btn-gold">Explore our products →</a>
+            <a href="#enterprise" class="btn btn-outline-white">Talk to enterprise</a>
+          </div>
+          <div class="hero-pills a4">
+            <span class="hero-pill">Chatisha</span>
+            <span class="hero-pill">WATU HCM</span>
+            <span class="hero-pill">Akili AI</span>
+            <span class="hero-pill">WhatsApp-native</span>
+            <span class="hero-pill">AI-powered</span>
+          </div>
+        </div>
+
+        <!-- Right: phone mockup -->
+        <div class="hero-visual a3" aria-label="Chatisha WhatsApp product preview">
+          <div class="phone-outer">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+
+                <div class="wa-header">
+                  <div class="wa-av">C</div>
+                  <div>
+                    <div class="wa-name">Chatisha · FlowrA</div>
+                    <div class="wa-online">● online</div>
+                  </div>
+                </div>
+
+                <div class="wa-body" id="wa-messages">
+                  <div class="wa-msg wa-recv msg-1"><span>Habari! 👋 Welcome to Chatisha. How can I help you today?</span></div>
+                  <div class="wa-msg wa-sent msg-2"><span>I'd like to book an appointment please</span></div>
+                  <div class="wa-msg wa-recv msg-3"><span>Of course! What date works for you? 📅</span></div>
+                  <div class="wa-msg wa-sent msg-4"><span>Tomorrow at 2pm</span></div>
+                  <div class="wa-msg wa-recv msg-5"><span>✅ Booked! You'll get a reminder 1 hour before. Anything else?</span></div>
+                </div>
+
+                <div class="wa-input-bar">
+                  <div class="wa-input-box">Type a message…</div>
+                  <div class="wa-send-btn">▶</div>
+                </div>
+
+              </div>
+            </div>
+            <div class="phone-glow" aria-hidden="true"></div>
+          </div>
+
+          <!-- Floating stat badges -->
+          <div class="hv-badge hv-b1" aria-label="70% no-show reduction">
+            <span class="hv-num">70%</span>
+            <span class="hv-lbl">No-show reduction</span>
+          </div>
+          <div class="hv-badge hv-b2" aria-label="Available 24/7">
+            <span class="hv-num">24/7</span>
+            <span class="hv-lbl">Always available</span>
+          </div>
+          <div class="hv-badge hv-b3" aria-label="Go live in 3 days">
+            <span class="hv-num">7 days</span>
+            <span class="hv-lbl">Go live</span>
+          </div>
+        </div>
+
+      </div><!-- /hero-inner -->
+    </div><!-- /hero -->
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stats-inner reveal-group">
+        <div class="stat-item">
+          <span class="stat-num counter" data-target="3" data-suffix="">3</span>
+          <span class="stat-lbl">Core Products</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num counter" data-target="100" data-suffix="K+">100K+</span>
+          <span class="stat-lbl">Target Businesses 2030</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num counter" data-target="10" data-suffix="+">10+</span>
+          <span class="stat-lbl">African Countries by 2030</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num counter" data-target="20" data-suffix="+">20+</span>
+          <span class="stat-lbl">Years Banking CTO Expertise</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- The FlowrA Promise -->
+    <div class="sec sec-navy">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="eyebrow eyebrow-white">Our Promise</div>
+          <h2 class="title title-white" style="margin-bottom:1rem">Built for Africa. Trusted like a bank.</h2>
+          <p class="subtitle subtitle-white">Six principles that guide everything we build.</p>
+        </div>
+        <div class="promise-grid reveal-group">
+          <div class="promise-card">
+            <div class="pc-icon">📱</div>
+            <div class="pc-title">WhatsApp-native</div>
+            <div class="pc-desc">No app downloads. No training. Works everywhere African business happens — on any phone, any network.</div>
+          </div>
+          <div class="promise-card">
+            <div class="pc-icon">🧠</div>
+            <div class="pc-title">AI-powered</div>
+            <div class="pc-desc">Built with Anthropic Claude — intelligent by default. Real AI, not chatbot tricks.</div>
+          </div>
+          <div class="promise-card">
+            <div class="pc-icon">🌍</div>
+            <div class="pc-title">Bilingual</div>
+            <div class="pc-desc">English and Swahili auto-detected and auto-responded. More African languages coming.</div>
+          </div>
+          <div class="promise-card">
+            <div class="pc-icon">🏦</div>
+            <div class="pc-title">Bank-grade</div>
+            <div class="pc-desc">Secure, compliant, reliable. Built by a 20+ year banking CTO with CISSP, CISM, CEH &amp; CCSP.</div>
+          </div>
+          <div class="promise-card">
+            <div class="pc-icon">🦁</div>
+            <div class="pc-title">African-built</div>
+            <div class="pc-desc">For African businesses. From Dar es Salaam. Built for African contexts, not adapted from elsewhere.</div>
+          </div>
+          <div class="promise-card">
+            <div class="pc-icon">✅</div>
+            <div class="pc-title">Locally compliant</div>
+            <div class="pc-desc">PAYE, NSSF, WCF, TRA, BOT — built in from day one. Not bolted on as an afterthought.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Wave: navy → bg -->
+  <div class="wave wave-to-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,35 C360,70 1080,0 1440,35 L1440,70 L0,70 Z"/>
+    </svg>
+  </div>
+
+  <!-- ════════════════ ABOUT ════════════════ -->
+  <section id="about" class="sec">
+    <div class="wrap">
+      <div class="about-grid">
+
+        <!-- Left: text -->
+        <div class="reveal from-left">
+          <div class="eyebrow">About FlowrA</div>
+          <h2 class="title" style="margin-bottom:1.25rem">African infrastructure,<br>built in Africa.</h2>
+          <p class="subtitle" style="margin-bottom:1.5rem">FlowrA Technology Africa Limited is a Tanzanian-born technology company building digital infrastructure for African businesses. We are headquartered in Dar es Salaam, at the Kigamboni Technology Hub.</p>
+          <p class="subtitle" style="margin-bottom:2rem">We don't bring Western software with poor translations. We build tools that understand African contexts, African languages, and African business realities.</p>
+
+          <div class="callout" style="margin:0 0 2rem">
+            <div class="callout-title">Our Mission</div>
+            <div class="callout-body">To give African businesses the digital infrastructure they deserve — tools built for African contexts, in African languages, at prices African businesses can afford, with bank-grade security that enterprises can trust.</div>
+          </div>
+
+          <div style="display:flex;gap:1rem;flex-wrap:wrap">
+            <a href="#products" class="btn btn-navy">See our products</a>
+            <a href="#team"     class="btn btn-gold">Meet the team</a>
+          </div>
+        </div>
+
+        <!-- Right: photo + name cards -->
+        <div class="reveal from-right">
+          <!-- Replace with: images/about-team.jpg (800×500 px minimum) -->
+          <div class="about-img-frame">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&h=400&fit=crop&q=80"
+              alt="FlowrA team at work"
+              class="about-img"
+              loading="lazy"
+            >
+            <div class="about-img-badge">
+              <div>
+                <div class="aib-loc">📍 Kigamboni Technology Hub</div>
+              </div>
+              <div class="aib-year">2024</div>
+            </div>
+          </div>
+
+          <div class="name-cards">
+            <div class="name-card">
+              <div class="nc-word">Flow</div>
+              <div class="nc-heading">Automation · Architecture · Experience · Simplicity</div>
+              <p class="nc-body">We make business processes flow — from customer booking to payroll to marketing campaigns. No friction. No complexity. Business just flows.</p>
+            </div>
+            <div class="name-card gold">
+              <div class="nc-word gold">rAAAAA</div>
+              <div class="nc-heading">The Roar of the African Lion</div>
+              <p class="nc-body">It is Africa's power, Africa's voice, Africa's pride. Together, <strong>FlowrA</strong> means: we move quietly and powerfully. But when we speak, Africa roars.</p>
+            </div>
+            <div style="background:var(--bg-3);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem">
+              <div style="font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem">Also Operating Under</div>
+              <div style="font-size:.9375rem;font-weight:700;color:var(--text-dark);margin-bottom:.375rem">QM Intelligence</div>
+              <p style="font-size:.84rem;color:var(--text-mid);line-height:1.65">Through our strategic agreement with QM Brands LLC, we provide AI services to American companies.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave: bg → bg-2 -->
+  <div class="wave wave-to-bg2" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,20 C480,55 960,0 1440,30 L1440,60 L0,60 Z"/>
+    </svg>
+  </div>
+
+  <!-- ════════════════ PRODUCTS ════════════════ -->
+  <section id="products" class="sec sec-off">
+    <div class="wrap">
+
+      <div class="products-intro reveal">
+        <div>
+          <div class="eyebrow">Our Products</div>
+          <h2 class="title">Three products.<br>One Flow.</h2>
+        </div>
+        <div>
+          <p class="subtitle">FlowrA has built three products that help African businesses communicate, manage their people, and grow with intelligence. Each product is WhatsApp-native, AI-powered, bilingual, and built on bank-grade infrastructure.</p>
+        </div>
+      </div>
+
+      <div class="products-grid reveal-group">
+
+        <!-- CHATISHA -->
+        <div class="product-card card-tilt">
+          <div class="pc-head">
+            <div class="pc-head-num">01</div>
+            <div class="pc-head-nick">FlowrA Chat</div>
+            <div class="pc-head-name">Chatisha</div>
+            <div class="pc-head-tag">Your customers are on WhatsApp. So are you.</div>
+          </div>
+          <div class="pc-body">
+            <p class="pc-desc">Chatisha automates customer communication through WhatsApp. Appointments, reminders, FAQs, and orders are handled automatically 24/7 in English or Swahili — with zero technical skill required.</p>
+            <ul class="pc-feats">
+              <li>WhatsApp appointment booking — 24/7 availability</li>
+              <li>Intelligent reminders — proven 70% no-show reduction</li>
+              <li>Mini-CRM dashboard — all conversations in one place</li>
+              <li>Bilingual: English &amp; Swahili auto-detected</li>
+              <li>Business setup wizard — live in 3 days</li>
+              <li>Pre-built templates: salons, clinics, hotels, restaurants</li>
+            </ul>
+            <table class="pricing-table">
+              <thead><tr><th>Tier</th><th>Monthly</th><th>Setup</th></tr></thead>
+              <tbody>
+                <tr><td>Starter</td><td>TZS 139,000</td><td>TZS 200,000</td></tr>
+                <tr><td>Growth</td><td>TZS 179,000</td><td>TZS 200,000</td></tr>
+                <tr><td>Enterprise</td><td>Custom</td><td>Negotiated</td></tr>
+              </tbody>
+            </table>
+            <a href="#contact" class="pc-cta">Start with Chatisha →</a>
+          </div>
+        </div>
+
+        <!-- WATU HCM -->
+        <div class="product-card card-tilt">
+          <div class="pc-head" style="background:linear-gradient(135deg,#0F2347,#1A3A6E)">
+            <div class="pc-head-num">02</div>
+            <div class="pc-head-nick">FlowrA People</div>
+            <div class="pc-head-name">WATU HCM</div>
+            <div class="pc-head-tag">Watu Wako, Mikononi Mwako — Your People, In Your Hands</div>
+          </div>
+          <div class="pc-body">
+            <p class="pc-desc">Tanzania's first AI-powered, WhatsApp-native HR and payroll platform. Employees request leave, check payslips, and clock in/out — all via WhatsApp. No app. No training.</p>
+            <ul class="pc-feats">
+              <li><strong>WATU HR</strong> — Digital employee records &amp; document alerts</li>
+              <li><strong>WATU Recruit</strong> — AI CV scoring &amp; candidate pipeline</li>
+              <li><strong>WATU Leave</strong> — Leave requests via WhatsApp or web</li>
+              <li><strong>WATU Pay</strong> — Payroll: PAYE, NSSF, WCF compliant</li>
+              <li><strong>WATU Docs</strong> — AI HR letters in English &amp; Swahili</li>
+              <li><strong>WATU Attend</strong> — Attendance &amp; shift management</li>
+            </ul>
+            <table class="pricing-table">
+              <thead><tr><th>Tier</th><th>Staff Range</th><th>Monthly</th></tr></thead>
+              <tbody>
+                <tr><td>Starter</td><td>1–20</td><td>USD 99$</td></tr>
+                <tr><td>Growth</td><td>21–50</td><td>USD 139$</td></tr>
+                <tr><td>Enterprise</td><td>100+</td><td>Custom</td></tr>
+              </tbody>
+            </table>
+            <a href="#contact" class="pc-cta">Start with WATU HCM →</a>
+          </div>
+        </div>
+
+        <!-- AKILI AI -->
+        <div class="product-card card-tilt">
+          <div class="pc-head" style="background:linear-gradient(135deg,#112654,#1E4480)">
+            <div class="pc-head-num">03</div>
+            <div class="pc-head-nick">FlowrA Intelligence</div>
+            <div class="pc-head-name">Akili AI</div>
+            <div class="pc-head-tag">Think together. Plan smarter. Publish consistently. Measure everything.</div>
+          </div>
+          <div class="pc-body">
+            <p class="pc-desc">Akili AI turns everyday WhatsApp team conversations into structured marketing campaigns, tasks, content briefs, and performance reports. Your team chats. Akili does the rest.</p>
+            <ul class="pc-feats">
+              <li>WhatsApp team collaboration — no new apps, no training</li>
+              <li>AI campaign &amp; task planning from raw ideas</li>
+              <li>Brand intelligence engine — consistent voice &amp; tone</li>
+              <li>Automated daily &amp; monthly leadership reports</li>
+              <li>Social media analytics &amp; scheduling (coming Q3 2026)</li>
+              <li>Multi-client support for agencies</li>
+            </ul>
+            <table class="pricing-table">
+              <thead><tr><th>Tier</th><th>Users</th><th>USD / mo</th></tr></thead>
+              <tbody>
+                <tr><td>Starter</td><td>1–2</td><td>$49</td></tr>
+                <tr><td>Growth</td><td>3–5</td><td>$99</td></tr>
+                <tr><td>Enterprise</td><td>20+</td><td>Custom</td></tr>
+              </tbody>
+            </table>
+            <div style="font-size:.72rem;color:var(--text-muted);margin:.5rem 0">Setup: $99 one-time · 10% annual discount</div>
+            <a href="#contact" class="pc-cta">Start with Akili AI →</a>
+          </div>
+        </div>
+
+      </div><!-- /products-grid -->
+
+      <div class="custom-strip reveal">
+        <div>
+          <div class="cs-title">Beyond products — custom solutions.</div>
+          <p class="cs-desc">Payment integrations (M-Pesa, Tigo Pesa, Airtel Money, AzamPay, Cellulant, Stripe, PayPal), custom WhatsApp automation, legacy system integrations, and white-label builds. If your business needs it, we build it.</p>
+        </div>
+        <a href="#custom" class="btn btn-gold">Request a custom solution</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Wave: bg-2 → bg -->
+  <div class="wave wave-to-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,30 C400,60 1000,0 1440,30 L1440,60 L0,60 Z"/>
+    </svg>
+  </div>
+
+  <!-- ════════════════ ENTERPRISE ════════════════ -->
+  <section id="enterprise" class="sec">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">For Enterprise &amp; Government</div>
+        <h2 class="title" style="margin-bottom:.75rem">Built for organizations<br>that demand excellence.</h2>
+        <p class="subtitle" style="margin-bottom:3.5rem">Government agencies. NGOs. Hospital networks. Hotel chains. Financial institutions. FlowrA delivers bank-grade, AI-powered infrastructure for African enterprises.</p>
+      </div>
+
+      <div class="ent-grid">
+        <div class="reveal from-left">
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.375rem;color:var(--text-dark);margin-bottom:1rem;font-weight:700">Why Enterprises Choose FlowrA</h3>
+          <div class="table-scroll">
+          <table class="feat-table">
+            <thead><tr><th>Requirement</th><th>How FlowrA Delivers</th></tr></thead>
+            <tbody>
+              <tr><td>Security</td><td>Encryption at rest and in transit. Audit logs. Multi-tenant data isolation.</td></tr>
+              <tr><td>Compliance</td><td>PAYE, NSSF, WCF, TRA, BOT — built in from day one.</td></tr>
+              <tr><td>Scale</td><td>Multi-tenant architecture supports thousands of employees across locations.</td></tr>
+              <tr><td>Reliability</td><td>99.9% uptime target. 24/7 monitoring. Dedicated incident response.</td></tr>
+              <tr><td>Local support</td><td>Dedicated account manager. On-site onboarding available.</td></tr>
+              <tr><td>Customization</td><td>White-label options. Custom workflows. Full API access.</td></tr>
+            </tbody>
+          </table>
+          </div><!-- /table-scroll -->
+
+          <div style="margin-top:2rem">
+            <h4 style="font-size:.84rem;font-weight:700;color:var(--text-dark);margin-bottom:1rem;letter-spacing:.04em">Organizations We Serve</h4>
+            <div class="ent-clients">
+              <div class="ent-pill">Government Agencies</div>
+              <div class="ent-pill">NGOs &amp; Donor Projects</div>
+              <div class="ent-pill">Banks &amp; Financial Institutions</div>
+              <div class="ent-pill">Hospital Networks</div>
+              <div class="ent-pill">Hotel Chains &amp; Tourism</div>
+              <div class="ent-pill">Large Enterprises</div>
+            </div>
+          </div>
+
+          <div style="margin-top:2rem;padding:1.5rem;background:var(--bg-3);border:1px solid var(--border);border-radius:var(--r)">
+            <div style="font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.625rem">Enterprise Pricing</div>
+            <div style="font-size:.9375rem;font-weight:700;color:var(--text-dark);margin-bottom:.375rem">TZS 500,000 – 2,000,000+ / month</div>
+            <p style="font-size:.84rem;color:var(--text-mid)">Custom quote based on employees, locations, modules, integrations, and SLA level.</p>
+            <div style="display:flex;gap:1rem;margin-top:1.25rem;flex-wrap:wrap">
+              <a href="#contact" class="btn btn-navy">Request enterprise demo</a>
+              <a href="mailto:business@flowratech.com" class="btn btn-outline-navy" style="font-size:.78rem">business@flowratech.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ent-features reveal from-right">
+          <div class="ent-feat">
+            <div class="ef-ico">👤</div>
+            <div><div class="ef-title">Dedicated Account Manager</div><div class="ef-desc">One person who knows your organization. Single point of contact for all support, implementation, and escalations.</div></div>
+          </div>
+          <div class="ent-feat">
+            <div class="ef-ico">⏱️</div>
+            <div><div class="ef-title">Custom SLA &amp; Uptime Guarantee</div><div class="ef-desc">99.9% uptime target. 4-hour priority response window. Tailored SLA commitments for critical operations.</div></div>
+          </div>
+          <div class="ent-feat">
+            <div class="ef-ico">📋</div>
+            <div><div class="ef-title">On-Site Training &amp; Onboarding</div><div class="ef-desc">For HR teams, managers, and employees. We come to you. Implementation is our responsibility.</div></div>
+          </div>
+          <div class="ent-feat">
+            <div class="ef-ico">🔗</div>
+            <div><div class="ef-title">Custom Integrations</div><div class="ef-desc">Connect FlowrA to your existing ERP, HRIS, banking systems, or government platforms via API.</div></div>
+          </div>
+          <div class="ent-feat">
+            <div class="ef-ico">🏷️</div>
+            <div><div class="ef-title">White-Label Options</div><div class="ef-desc">Your brand, our engine. Multi-location support across all your branches from a single unified platform.</div></div>
+          </div>
+          <div class="ent-feat">
+            <div class="ef-ico">✅</div>
+            <div><div class="ef-title">Regulatory Compliance by Default</div><div class="ef-desc">PAYE, NSSF, WCF, TRA, GDPR-aligned. Built by a team with 20+ years under Tanzanian banking regulations.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout reveal" style="margin-top:3rem">
+        <div class="callout-title">Built by a Team That Understands Both Business and Banking</div>
+        <div class="callout-body"><strong>Chiwambo Bandawe</strong> — 12+ years driving enterprise digital transformation, deployed HRMS for Akiba Commercial Bank, expertise in TRA, BOT, and TCRA compliance. <strong>Abdul Bandawe</strong> — 20+ years as CTO at major Tanzanian banks (Amana Bank, Imaan Finance, Bank M, Exim Bank), Master's in Cyber Security, CISSP, CISM, CEH, CCSP. <strong>Omar Yanga Omar</strong> — B2B sales hunter, Business Development at Bolt Tanzania, Beem Africa, and Etisalat Dubai. Together: bank-grade secure, business-ready, and compliant by default.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave: bg → bg-3 -->
+  <div class="wave wave-to-bg3" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,15 C300,55 900,0 1440,25 L1440,60 L0,60 Z"/>
+    </svg>
+  </div>
+
+  <!-- ════════════════ CUSTOM SOLUTIONS ════════════════ -->
+  <section id="custom" class="sec sec-tint">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">Custom Solutions</div>
+        <h2 class="title" style="margin-bottom:.75rem">Built for your business.<br>Not someone else's.</h2>
+        <p class="subtitle" style="margin-bottom:3rem">Every African business is unique. Sometimes our standard products fit perfectly. Sometimes you need something built just for you. We do that too.</p>
+      </div>
+
+      <div class="custom-table-wrap reveal-group">
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--text-dark);margin-bottom:1rem;font-weight:700">What We Can Build For You</h3>
+          <div class="table-scroll">
+          <table class="custom-table">
+            <thead><tr><th>Service</th><th>Examples</th></tr></thead>
+            <tbody>
+              <tr><td>Payment integrations</td><td>M-Pesa, Tigo Pesa, Airtel Money, AzamPay, Cellulant, Stripe, PayPal, bank APIs</td></tr>
+              <tr><td>WhatsApp automation</td><td>Custom bots, workflows, conversational AI for your business</td></tr>
+              <tr><td>System integrations</td><td>Connect to existing ERP, CRM, banking systems, or legacy software</td></tr>
+              <tr><td>HR &amp; payroll customization</td><td>Tailored modules for unique organizational policies</td></tr>
+              <tr><td>AI solutions</td><td>Custom AI models, chatbots, or intelligence layers for your industry</td></tr>
+              <tr><td>End-to-end automation</td><td>Complete business process automation design &amp; deployment</td></tr>
+              <tr><td>White-label solutions</td><td>Our technology engine, your brand identity</td></tr>
+            </tbody>
+          </table>
+          </div><!-- /table-scroll -->
+        </div>
+        <div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--text-dark);margin-bottom:1rem;font-weight:700">Who Needs Custom Solutions</h3>
+          <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem">
+            <div class="ent-pill">Banks and financial institutions</div>
+            <div class="ent-pill">Large enterprises with legacy systems</div>
+            <div class="ent-pill">Government agencies</div>
+            <div class="ent-pill">NGOs and donor-funded projects</div>
+            <div class="ent-pill">Any business with unique workflow needs</div>
+          </div>
+          <div style="background:var(--navy-dark);border-radius:var(--r);padding:2rem;border-left:4px solid var(--gold)">
+            <div style="font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.625rem">Typical Project Range</div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:.5rem">TZS 2M – Negotiated Price</div>
+            <p style="font-size:.84rem;color:rgba(255,255,255,.5);margin-bottom:1.25rem">Depending on scope, complexity, and integration requirements.</p>
+            <a href="#contact" class="btn btn-gold" style="width:100%;justify-content:center">Request a consultation →</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:3.5rem">
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--text-dark);margin-bottom:2rem;font-weight:700;text-align:center" class="reveal">How It Works</h3>
+        <div class="how-grid reveal-group">
+          <div class="how-step">
+            <div class="how-num">01</div>
+            <div class="how-title">You Tell Us The Problem</div>
+            <div class="how-desc">What is not flowing in your business? Share your challenge — no matter how complex.</div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">02</div>
+            <div class="how-title">We Design a Solution</div>
+            <div class="how-desc">Custom architecture, timeline, and transparent pricing — tailored to your specific needs.</div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">03</div>
+            <div class="how-title">We Build and Integrate</div>
+            <div class="how-desc">Our team delivers. You don't need to manage developers or worry about technical details.</div>
+          </div>
+          <div class="how-step">
+            <div class="how-num">04</div>
+            <div class="how-title">You Run Better</div>
+            <div class="how-desc">Business flows. Africa grows. Ongoing support ensures everything keeps working.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave: bg-3 → bg -->
+  <div class="wave wave-to-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 C480,10 960,60 1440,20 L1440,60 L0,60 Z"/>
+    </svg>
+  </div>
+
+  <!-- ════════════════ TEAM ════════════════ -->
+  <section id="team" class="sec">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">Our Leadership</div>
+        <h2 class="title" style="margin-bottom:.75rem">Three founders.<br>One unstoppable team.</h2>
+        <p class="subtitle">FlowrA brings together product vision, banking-grade infrastructure, and B2B sales expertise — on every side of the founding table.</p>
+      </div>
+
+      <div class="team-grid reveal-group">
+
+        <!-- Chiwambo Bandawe -->
+        <!-- Replace photo with: images/founder-chiwambo.jpg (400×500 px min) -->
+        <div class="founder-card card-tilt">
+          <div class="fc-photo-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=560&fit=crop&q=80"
+              alt="Chiwambo John Bandawe Jr — CEO"
+              class="fc-photo"
+              loading="lazy"
+            >
+            <div class="fc-photo-overlay">
+              <span class="fc-role-badge">CEO &amp; Founder</span>
+            </div>
+          </div>
+          <div class="fc-content">
+            <h3 class="fc-name">Chiwambo John Bandawe Jr</h3>
+            <div class="fc-title-line">Founder &amp; Chief Executive Officer</div>
+            <p class="fc-bio">Digital transformation and business strategy leader with over 12 years driving tech-powered growth across African markets. Led enterprise HRMS deployment for Akiba Commercial Bank. Scaled revenue by $1M+ with 90%+ client retention.</p>
+            <div class="fc-tags">
+              <span class="fc-tag">12+ Yrs Experience</span>
+              <span class="fc-tag g">$1M+ Revenue Growth</span>
+              <span class="fc-tag">90%+ Retention</span>
+              <span class="fc-tag">TRA · BOT · TCRA</span>
+              <span class="fc-tag g">Akiba Commercial Bank</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Abdul Bandawe -->
+        <!-- Replace photo with: images/founder-abdul.jpg (400×500 px min) -->
+        <div class="founder-card card-tilt">
+          <div class="fc-photo-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&h=560&fit=crop&q=80"
+              alt="Abdul Bandawe — Chief Infrastructure Officer"
+              class="fc-photo"
+              loading="lazy"
+            >
+            <div class="fc-photo-overlay">
+              <span class="fc-role-badge">Co-Founder &amp; CIO</span>
+            </div>
+          </div>
+          <div class="fc-content">
+            <h3 class="fc-name">Abdul Bandawe</h3>
+            <div class="fc-title-line">Co-Founder &amp; Chief Infrastructure Officer</div>
+            <p class="fc-bio">20+ years as CTO across Tanzania's top banks: Amana Bank Limited (11+ yrs), Imaan Finance, Bank M Tanzania, Exim Bank Tanzania. Master's in Cyber Security with Distinction. CISSP · CISM · CEH · CCSP.</p>
+            <div class="fc-tags">
+              <span class="fc-tag">20+ Yrs Banking CTO</span>
+              <span class="fc-tag g">MSc Cyber Security</span>
+              <span class="fc-tag">CISSP · CISM</span>
+              <span class="fc-tag g">CEH · CCSP</span>
+              <span class="fc-tag">Amana Bank</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Omar Yanga Omar -->
+        <!-- Replace photo with: images/founder-omar.jpg (400×500 px min) -->
+        <div class="founder-card card-tilt">
+          <div class="fc-photo-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=560&fit=crop&q=80"
+              alt="Omar Yanga Omar — Head of Sales"
+              class="fc-photo"
+              loading="lazy"
+            >
+            <div class="fc-photo-overlay">
+              <span class="fc-role-badge">Co-Founder &amp; Sales</span>
+            </div>
+          </div>
+          <div class="fc-content">
+            <h3 class="fc-name">Omar Yanga Omar</h3>
+            <div class="fc-title-line">Co-Founder &amp; Chief Commercial officer</div>
+            <p class="fc-bio">Results-driven B2B sales hunter across Tanzania and international markets. Business Development Manager at Bolt Tanzania. Previously at Beem Africa and Etisalat Dubai. BSc E-Commerce, Canadian University Dubai.</p>
+            <div class="fc-tags">
+              <span class="fc-tag g">B2B Sales Lead</span>
+              <span class="fc-tag">Bolt Tanzania</span>
+              <span class="fc-tag">Beem Africa</span>
+              <span class="fc-tag">Etisalat Dubai</span>
+              <span class="fc-tag g">E-Commerce BSc</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /team-grid -->
+
+      <div class="team-strength reveal-group">
+        <div class="ts-item">
+          <h4>Product &amp; Business Growth</h4>
+          <p>Led by Chiwambo — from business requirements to live product, with 12+ years of African market experience.</p>
+        </div>
+        <div class="ts-item">
+          <h4>Bank-Grade Infrastructure</h4>
+          <p>Led by Abdul — security, compliance, and architecture built to banking standards from day one.</p>
+        </div>
+        <div class="ts-item">
+          <h4>B2B Sales &amp; Acquisition</h4>
+          <p>Led by Omar — a proven hunter who closes deals across Tanzania and international markets.</p>
+        </div>
+        <div class="ts-item">
+          <h4>US Services &amp; Global Reach</h4>
+          <p>Through QM Intelligence — generating USD revenue and international credibility for the FlowrA mission.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave: bg → dark navy -->
+  <div class="wave wave-to-navy" aria-hidden="true">
+    <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,25 C360,65 1080,0 1440,35 L1440,70 L0,70 Z"/>
+    </svg>
+  </div>
+
+  <!-- ════════════════ VISION ════════════════ -->
+  <section id="vision" class="sec sec-dark">
+    <div class="wrap" style="text-align:center">
+      <div class="reveal">
+        <div class="eyebrow eyebrow-white eyebrow-center">Vision 2030</div>
+        <p class="vision-quote">"FlowrA becomes the business operating system for African SMEs — the Shopify + Slack + Salesforce of Africa."</p>
+        <div class="vision-divider"></div>
+      </div>
+
+      <div class="vision-stats reveal-group">
+        <div>
+          <span class="vs-num counter" data-target="100" data-suffix="K+">100K+</span>
+          <span class="vs-lbl">Businesses served</span>
+        </div>
+        <div>
+          <span class="vs-num counter" data-target="10" data-suffix="+">10+</span>
+          <span class="vs-lbl">African countries</span>
+        </div>
+        <div>
+          <span class="vs-num counter" data-target="3" data-suffix="">3</span>
+          <span class="vs-lbl">Core products</span>
+        </div>
+        <div>
+          <span class="vs-num counter" data-target="1" data-suffix="">1</span>
+          <span class="vs-lbl">Flow</span>
+        </div>
+      </div>
+
+      <p class="vision-sub reveal">Built by brothers. Backed by 20+ years of banking-grade infrastructure. Driven by results.</p>
+
+      <div class="vision-phase-grid reveal-group">
+        <div class="vp-card">
+          <div class="vp-phase">Phase 1</div>
+          <div class="vp-period">2024–2025</div>
+          <div class="vp-focus">Tanzania product-market fit</div>
+          <div class="vp-milestone">50+ paying clients · 3 products live · Dar es Salaam base</div>
+        </div>
+        <div class="vp-card">
+          <div class="vp-phase">Phase 2</div>
+          <div class="vp-period">2026</div>
+          <div class="vp-focus">East Africa entry + enterprise</div>
+          <div class="vp-milestone">200+ clients · Kenya operations · Enterprise contracts</div>
+        </div>
+        <div class="vp-card">
+          <div class="vp-phase">Phase 3</div>
+          <div class="vp-period">2027–2028</div>
+          <div class="vp-focus">4 markets · Series A deployed</div>
+          <div class="vp-milestone">2,000+ clients · Uganda · Rwanda · USD 5M ARR</div>
+        </div>
+        <div class="vp-card">
+          <div class="vp-phase">Phase 4</div>
+          <div class="vp-period">2029–2030</div>
+          <div class="vp-focus">Continental dominance</div>
+          <div class="vp-milestone">100,000+ clients · 10 countries · USD 40M ARR</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave: dark navy → bg-2 -->
+  <div class="wave wave-to-bg2" aria-hidden="true" style="background:#0F2347">
+    <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,35 C480,70 960,5 1440,40 L1440,70 L0,70 Z"/>
+    </svg>
+  </div>
+
+  <!-- ════════════════ CONTACT ════════════════ -->
+  <section id="contact" class="sec sec-off">
+    <div class="wrap">
+      <div class="contact-grid">
+
+        <!-- Info -->
+        <div class="reveal from-left">
+          <div class="eyebrow">Get In Touch</div>
+          <h2 class="title" style="margin-bottom:1.25rem">Ready to make your<br>business flow?</h2>
+          <p class="subtitle" style="margin-bottom:.5rem">Whether you want to try Chatisha, WATU HCM, or Akili AI — or need a custom solution — our team responds within 24 hours.</p>
+          <p style="font-size:.84rem;color:var(--text-muted);margin-bottom:2rem">Enterprise enquiries receive a response within 4 hours.</p>
+
+          <div class="contact-info-items">
+            <div class="ci">
+              <div class="ci-ico">📍</div>
+              <div><div class="ci-label">Headquarters</div><div class="ci-val">Kigamboni Technology Hub, Dar es Salaam, Tanzania</div></div>
+            </div>
+            <div class="ci">
+              <div class="ci-ico">✉️</div>
+              <div><div class="ci-label">General Enquiries</div><div class="ci-val">hello@flowratech.com</div></div>
+            </div>
+            <div class="ci">
+              <div class="ci-ico">🏢</div>
+              <div><div class="ci-label">Business Enquiries</div><div class="ci-val">business@flowratech.com</div></div>
+            </div>
+            <div class="ci">
+              <div class="ci-ico">🛠️</div>
+              <div><div class="ci-label">Support</div><div class="ci-val">support@flowratech.com</div></div>
+            </div>
+            <div class="ci">
+              <div class="ci-ico">📱</div>
+              <div><div class="ci-label">Tanzania (WhatsApp)</div><div class="ci-val">+255 765 111131 &nbsp;·&nbsp; +255 799 777002</div></div>
+            </div>
+            <div class="ci">
+              <div class="ci-ico">🇺🇸</div>
+              <div><div class="ci-label">USA Office</div><div class="ci-val">+1 585 513 2555</div></div>
+            </div>
+            <div class="ci">
+              <div class="ci-ico">📍</div>
+              <div><div class="ci-label">USA Address</div><div class="ci-val">30 N Gould St, STE R, Sheridan WY 82801, United States</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="reveal from-right">
+          <div class="contact-form">
+            <div class="form-title">Send us a message</div>
+            <div class="form-sub">Tell us about your business and what you need. We'll come back with the right solution.</div>
+
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="fg">
+                  <input type="text" id="first-name" name="first-name" placeholder=" " required autocomplete="given-name">
+                  <label for="first-name">First name</label>
+                </div>
+                <div class="fg">
+                  <input type="text" id="last-name" name="last-name" placeholder=" " required autocomplete="family-name">
+                  <label for="last-name">Last name</label>
+                </div>
+              </div>
+              <div class="fg">
+                <input type="email" id="email" name="email" placeholder=" " required autocomplete="email">
+                <label for="email">Business email</label>
+              </div>
+              <div class="fg">
+                <input type="tel" id="phone" name="phone" placeholder=" " autocomplete="tel">
+                <label for="phone">Phone / WhatsApp</label>
+              </div>
+              <div class="fg">
+                <input type="text" id="company" name="company" placeholder=" " autocomplete="organization">
+                <label for="company">Company / Organization</label>
+              </div>
+              <div class="fg">
+                <select id="interest" name="interest">
+                  <option value="" disabled selected>Select a product or service</option>
+                  <option>Chatisha (FlowrA Chat)</option>
+                  <option>WATU HCM (FlowrA People)</option>
+                  <option>Akili AI (FlowrA Intelligence)</option>
+                  <option>Custom solution / integration</option>
+                  <option>Enterprise &amp; government</option>
+                  <option>General enquiry</option>
+                </select>
+              </div>
+              <div class="fg textarea-fg">
+                <textarea id="message" name="message" placeholder="Tell us about your business and what you need…" rows="4"></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send message →</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-mark">Flowr<span>A</span></div>
+        <p class="footer-tagline">Where business flows and Africa grows. Building the business operating system for African SMEs.</p>
+        <div class="footer-ci"><span>📍</span>Kigamboni Technology Hub, Dar es Salaam, Tanzania</div>
+        <div class="footer-ci"><span>✉️</span>hello@flowratech.com</div>
+        <div class="footer-ci"><span>📱</span>+255 765 111131 &nbsp;·&nbsp; +255 799 777002</div>
+        <div class="footer-ci"><span>🇺🇸</span>+1 585 513 2555 &nbsp;·&nbsp; Sheridan, WY, USA</div>
+        <div class="footer-ci"><span>🌐</span>www.flowratech.com</div>
+      </div>
+      <div class="footer-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="#products">Chatisha (FlowrA Chat)</a></li>
+          <li><a href="#products">WATU HCM (FlowrA People)</a></li>
+          <li><a href="#products">Akili AI (FlowrA Intelligence)</a></li>
+          <li><a href="#custom">Custom Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">About FlowrA</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#enterprise">Enterprise</a></li>
+          <li><a href="#vision">Vision 2030</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Data Protection</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 FlowrA Technology Africa Limited. All rights reserved. Tanzania · USA &nbsp;|&nbsp; EIN: 38-4364223</div>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Security</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/255765111131" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span class="wa-float-label">Chat with us</span>
+  </a>
+
+  <!-- Scroll to top -->
+  <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
