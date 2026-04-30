@@ -208,9 +208,11 @@
       btn.disabled    = true;
 
       try {
+        const payload = Object.fromEntries(new FormData(form));
         const res  = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          body:   new FormData(form)
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body:    JSON.stringify(payload)
         });
         const data = await res.json();
 
