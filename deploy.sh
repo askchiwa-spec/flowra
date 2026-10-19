@@ -44,6 +44,13 @@ else
 fi
 SHA="$(git -C "${WEBROOT}" rev-parse --short HEAD)"
 echo "  at ${SHA}"
+# If the pull changed this very script, re-run the NEW version from the top.
+# (bash keeps executing the old file it already opened; without this the old
+#  deploy logic would finish the run.)
+if [ "${FLOWRA_REEXEC:-0}" != "1" ] && ! cmp -s "$0" "${WEBROOT}/deploy.sh"; then
+  echo "  deploy.sh itself was updated — re-running the new version"
+  FLOWRA_REEXEC=1 exec bash "${WEBROOT}/deploy.sh" "$@"
+fi
 # Webroot must be world-readable for nginx (www-data); .git is blocked by nginx.
 chown -R root:root "${WEBROOT}"
 find "${WEBROOT}" -type d -exec chmod 755 {} +
