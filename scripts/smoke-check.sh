@@ -44,7 +44,7 @@ done
 [ "$(code "${BASE}/this-page-does-not-exist-$RANDOM")" = 404 ] && pass "unknown path → 404 (no SPA fallback)" || bad "unknown path not 404"
 
 echo "── Assets"
-for p in css/styles.css css/animations.css js/main.js images/flowra-logo-160.webp images/hero-bg.webp images/lion-watermark.webp images/favicon.png 404.html; do
+for p in css/styles.css css/animations.css js/main.js images/flowra-logo-160.webp images/hero-bg.webp images/lion-watermark.webp images/favicon.png images/growth-engine.webp growth-engine.html watu-hcm.html 404.html; do
   [ "$(code "${BASE}/${p}")" = 200 ] && pass "${p} 200" || bad "${p} not 200"
 done
 

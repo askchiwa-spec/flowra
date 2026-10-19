@@ -6,7 +6,10 @@ Where business flows and Africa grows.
 
 ```
 FlowrA Website/
-├── index.html          ← main entry point
+├── index.html          ← homepage
+├── growth-engine.html  ← AKILI Growth Engine page (built, do not edit by hand)
+├── watu-hcm.html       ← WATU HCM page (built, do not edit by hand)
+├── pages/*.body.html   ← page content; run scripts/build-pages.py after editing
 ├── css/
 │   ├── styles.css      ← all styles + dark/light mode tokens
 │   └── animations.css  ← keyframes + scroll-reveal classes
@@ -75,6 +78,12 @@ From your laptop, after any deploy:
 ```bash
 bash scripts/smoke-check.sh
 ```
+
+### Product pages
+
+`growth-engine.html` and `watu-hcm.html` are generated from `pages/*.body.html`
+plus the homepage's head, nav and footer. Edit the body file (or index.html's
+nav/footer), then run `python3 scripts/build-pages.py` and commit all three.
 
 ### Cache busting
 

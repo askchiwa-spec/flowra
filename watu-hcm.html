@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WATU HCM: one monthly fee per company, every plan includes every module. Attendance, payroll with PAYE, NSSF, WCF, SDL and HESLB, leave, loans, recruitment and the employee app.">
+  <meta name="keywords" content="FlowrA, Tanzania, Africa, HR software, WhatsApp automation, AI business tools, Chatisha, WATU HCM, Akili AI, Dar es Salaam">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="WATU HCM — HR, payroll and attendance for Tanzania | FlowrA">
+  <meta property="og:description" content="WATU HCM: one monthly fee per company, every plan includes every module. Attendance, payroll with PAYE, NSSF, WCF, SDL and HESLB, leave, loans, recruitment and the employee app.">
+  <meta property="og:image" content="https://www.flowratech.com/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.flowratech.com/watu-hcm.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WATU HCM — HR, payroll and attendance for Tanzania | FlowrA">
+  <meta name="twitter:description" content="WATU HCM: one monthly fee per company, every plan includes every module. Attendance, payroll with PAYE, NSSF, WCF, SDL and HESLB, leave, loans, recruitment and the employee app.">
+  <meta name="twitter:image" content="https://www.flowratech.com/images/og-image.jpg">
+  <link rel="canonical" href="https://www.flowratech.com/watu-hcm.html">
+  <title>WATU HCM — HR, payroll and attendance for Tanzania | FlowrA</title>
+
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
+  <meta name="theme-color" content="#0F2347">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/animations.css?v=20261021">
+  <link rel="stylesheet" href="css/styles.css?v=20261023">
+</head>
+<body>
+
+  <!-- Site watermark — lion logo ghost -->
+  <div class="site-watermark" aria-hidden="true"></div>
+
+  <!-- Progress Bar -->
+  <div id="progress-bar" aria-hidden="true"></div>
+
+  <!-- Toast Notification -->
+  <div id="toast" role="alert" aria-live="polite">
+    <div class="toast-icon">✓</div>
+    <span class="toast-msg"></span>
+  </div>
+
+  <!-- ════════════════ NAV ════════════════ -->
+  <nav id="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <a href="index.html#home" class="nav-logo" aria-label="FlowrA Home">
+        <img src="images/flowra-logo-160.webp" width="160" height="160" alt="FlowrA" class="nav-logo-img">
+        <div>
+          <div class="nav-logo-mark">Flowr<span>A</span></div>
+          <div class="nav-logo-sub">Technology Africa Limited</div>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#products">Products</a>
+        <a href="growth-engine.html">Growth Engine</a>
+        <a href="watu-hcm.html">WATU HCM</a>
+        <a href="index.html#enterprise">Enterprise</a>
+        <a href="index.html#team">Team</a>
+        <a href="index.html#contact" class="nav-cta">Talk to us</a>
+      </div>
+
+      <div class="nav-actions">
+        <button type="button" id="theme-toggle" class="theme-btn" aria-label="Toggle dark/light mode">
+          <!-- Moon: shown in light mode -->
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <!-- Sun: shown in dark mode -->
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1"  x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22"  x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1"  y1="12" x2="3"  y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+        <button type="button" class="ham" id="ham" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mob-menu" id="mob-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html#home">Home</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#products">Products</a>
+    <a href="growth-engine.html">AKILI Growth Engine</a>
+    <a href="watu-hcm.html">WATU HCM</a>
+    <a href="index.html#enterprise">Enterprise</a>
+    <a href="index.html#custom">Custom Solutions</a>
+    <a href="index.html#team">Our Team</a>
+    <a href="index.html#vision">Vision 2030</a>
+    <a href="index.html#contact" class="mob-cta">Talk to us →</a>
+  </div>
+
+  <!-- ════════════════ PAGE HERO ════════════════ -->
+  <section class="page-hero" id="top">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow eyebrow-white">WATU HCM · FlowrA People</div>
+        <h1>Your people, <em>in your hands.</em></h1>
+        <p class="lead">Tanzania's AI-powered, WhatsApp-native HR, payroll and attendance platform. One monthly fee per company. Every plan includes every module. Staff request leave, check payslips and clock in from WhatsApp or the employee app.</p>
+        <p class="sw">Watu Wako, Mikononi Mwako.</p>
+        <div class="hero-btns">
+          <a href="https://www.watuhcm.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Start free ↗</a>
+          <a href="index.html#contact" class="btn btn-outline-white">Book a demo</a>
+        </div>
+      </div>
+      <div>
+        <div class="promise-card" style="background:rgba(255,255,255,.05)">
+          <div class="callout-title">Every plan includes</div>
+          <ul class="check-list" style="margin-top:.75rem">
+            <li style="color:rgba(255,255,255,.85)">Attendance: QR, kiosk and fingerprint</li>
+            <li style="color:rgba(255,255,255,.85)">Payroll with automatic PAYE, NSSF, WCF, SDL and HESLB</li>
+            <li style="color:rgba(255,255,255,.85)">Statutory filing pack and bank upload files</li>
+            <li style="color:rgba(255,255,255,.85)">Leave, expense claims and staff loans</li>
+            <li style="color:rgba(255,255,255,.85)">HR letters, recruitment and approvals by a second person</li>
+            <li style="color:rgba(255,255,255,.85)">Audit trail and the employee app</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ PRICING ════════════════ -->
+  <section class="sec" id="pricing">
+    <div class="wrap">
+      <div class="page-section-head reveal">
+        <div class="eyebrow">Pricing</div>
+        <h2 class="title" style="margin-bottom:1rem">One monthly fee per company</h2>
+        <p class="subtitle">Every plan includes every module. All prices in Tanzanian shillings.</p>
+      </div>
+      <div class="price-table-wrap table-scroll reveal">
+        <table class="pricing-table">
+          <thead><tr><th scope="col">Plan</th><th scope="col">Employees</th><th scope="col">Monthly</th><th scope="col">Annual (2 months free)</th><th scope="col">One-time setup</th></tr></thead>
+          <tbody>
+            <tr><td>Free</td><td>Up to 5</td><td>TZS 0</td><td>TZS 0</td><td>Self-service</td></tr>
+            <tr><td>Starter</td><td>6 to 20</td><td>TZS 200,000</td><td>TZS 2,000,000</td><td>TZS 500,000</td></tr>
+            <tr class="rec"><td>Growth</td><td>21 to 50</td><td>TZS 350,000</td><td>TZS 3,500,000</td><td>TZS 1,000,000</td></tr>
+            <tr><td>Business</td><td>51 to 100</td><td>TZS 500,000</td><td>TZS 5,000,000</td><td>TZS 1,500,000</td></tr>
+            <tr><td>Enterprise</td><td>100+</td><td>TZS 5,000 per employee</td><td>Quoted</td><td>From TZS 3,000,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="price-note reveal">Prices exclude VAT where applicable and are valid for quotations issued until 31 March 2027. The annual price is 10 months' fee for 12 months of service.</p>
+      <div class="hero-btns reveal" style="margin-top:1.5rem">
+        <a href="https://www.watuhcm.com" target="_blank" rel="noopener noreferrer" class="btn btn-navy">Start free ↗</a>
+        <a href="index.html#contact" class="btn btn-outline-navy">Book a demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ SETUP + OPTIONAL ════════════════ -->
+  <section class="sec sec-off">
+    <div class="wrap">
+      <div class="two-col reveal-group" style="margin-top:0">
+        <div class="col-card">
+          <h3>Setup includes</h3>
+          <ul class="check-list">
+            <li>Data import and clean-up</li>
+            <li>Salary and leave setup</li>
+            <li>QR posters for each site</li>
+            <li>One payroll month run side by side with your current method</li>
+            <li>Training</li>
+          </ul>
+        </div>
+        <div class="col-card gold">
+          <h3>Optional</h3>
+          <table class="pricing-table" style="margin-top:.5rem">
+            <thead><tr><th scope="col">Add-on</th><th scope="col">Price</th></tr></thead>
+            <tbody>
+              <tr><td>WhatsApp channel</td><td>TZS 50,000 a month</td></tr>
+              <tr><td>Biometric devices</td><td>You buy the devices; connection included at go-live sites</td></tr>
+              <tr><td>Salary payment to mobile money</td><td>Per transaction</td></tr>
+              <tr><td>Extra training</td><td>Quoted per day</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ MODULES ════════════════ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="page-section-head reveal">
+        <div class="eyebrow">Modules</div>
+        <h2 class="title" style="margin-bottom:1rem">Everything HR, in one place</h2>
+      </div>
+      <div class="ent-features reveal-group">
+        <div class="ent-feat"><div class="ef-ico">🕒</div><div><div class="ef-title">WATU Attend</div><div class="ef-desc">Attendance by QR, kiosk or fingerprint, with shifts and sites.</div></div></div>
+        <div class="ent-feat"><div class="ef-ico">💰</div><div><div class="ef-title">WATU Pay</div><div class="ef-desc">Payroll with automatic PAYE, NSSF, WCF, SDL and HESLB, a statutory filing pack and bank upload files.</div></div></div>
+        <div class="ent-feat"><div class="ef-ico">🌴</div><div><div class="ef-title">WATU Leave</div><div class="ef-desc">Leave requests and balances from WhatsApp, the app or the web.</div></div></div>
+        <div class="ent-feat"><div class="ef-ico">🧾</div><div><div class="ef-title">Claims &amp; Loans</div><div class="ef-desc">Expense claims and staff loans with approval by a second person.</div></div></div>
+        <div class="ent-feat"><div class="ef-ico">📄</div><div><div class="ef-title">WATU Docs</div><div class="ef-desc">AI-drafted HR letters in English and Swahili, with digital employee records.</div></div></div>
+        <div class="ent-feat"><div class="ef-ico">🧑‍💼</div><div><div class="ef-title">WATU Recruit</div><div class="ef-desc">AI CV scoring and a candidate pipeline.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ CTA ════════════════ -->
+  <section class="sec-sm sec-off">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h2>Run your first payroll side by side with us.</h2>
+        <p>Start free with up to five employees, or book a demo and we will set up your company, import your staff and run one payroll month against your current method.</p>
+        <div class="hero-btns" style="justify-content:center;margin-top:0">
+          <a href="https://www.watuhcm.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold">Start free ↗</a>
+          <a href="index.html#contact" class="btn btn-outline-white">Book a demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-mark">Flowr<span>A</span></div>
+        <p class="footer-tagline">Where business flows and Africa grows. Building the business operating system for African SMEs.</p>
+        <div class="footer-ci"><span>📍</span>Golden Jubilee Tower, 15th Floor, Wing B, Dar es Salaam, Tanzania &middot; P.O. Box 14636</div>
+        <div class="footer-ci"><span>✉️</span>business@flowratech.com</div>
+        <div class="footer-ci"><span>📱</span>+255 765 111 131 &nbsp;·&nbsp; +255 717 678 709</div>
+        <div class="footer-ci"><span>🇺🇸</span>+1 585 513 2555 &nbsp;·&nbsp; Sheridan, WY, USA</div>
+        <div class="footer-ci"><span>🌐</span>www.flowratech.com</div>
+      </div>
+      <div class="footer-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="growth-engine.html">AKILI Growth Engine</a></li>
+          <li><a href="watu-hcm.html">WATU HCM (FlowrA People)</a></li>
+          <li><a href="https://www.chatisha.com" target="_blank" rel="noopener noreferrer">Chatisha (FlowrA Chat) ↗</a></li>
+          <li><a href="index.html#custom">Custom Solutions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="index.html#about">About FlowrA</a></li>
+          <li><a href="index.html#team">Our Team</a></li>
+          <li><a href="index.html#enterprise">Enterprise</a></li>
+          <li><a href="index.html#vision">Vision 2030</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="index.html#">Privacy Policy</a></li>
+          <li><a href="index.html#">Terms of Service</a></li>
+          <li><a href="index.html#">Security</a></li>
+          <li><a href="index.html#">Data Protection</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 FlowrA Technology Africa Limited. All rights reserved. Tanzania · USA &nbsp;|&nbsp; EIN: 38-4364223</div>
+      <div class="footer-legal">
+        <a href="index.html#">Privacy</a>
+        <a href="index.html#">Terms</a>
+        <a href="index.html#">Security</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/255765111131" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    <span class="wa-float-label">Chat with us</span>
+  </a>
+
+  <!-- Scroll to top -->
+  <button type="button" id="scroll-top" aria-label="Back to top">↑</button>
+
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+  <script src="js/main.js?v=20261023"></script>
+</body>
+</html>

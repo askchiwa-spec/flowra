@@ -6,12 +6,14 @@
 
   /* ── Loader ──────────────────────────────────────────── */
   const loader = document.getElementById('loader');
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      loader.classList.add('out');
-      setTimeout(() => { loader.style.display = 'none'; }, 750);
-    }, 1500);
-  });
+  if (loader) {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        loader.classList.add('out');
+        setTimeout(() => { loader.style.display = 'none'; }, 750);
+      }, 1500);
+    });
+  }
 
   /* ── Theme Toggle ────────────────────────────────────── */
   const html     = document.documentElement;
@@ -167,6 +169,7 @@
   const toast = document.getElementById('toast');
 
   function showToast(msg) {
+    if (!toast) { alert(msg); return; }
     const msgEl = toast.querySelector('.toast-msg');
     if (msgEl) msgEl.textContent = msg;
     toast.classList.add('show');
