@@ -13,39 +13,6 @@
     }, 1500);
   });
 
-  /* ── Custom Cursor ───────────────────────────────────── */
-  const dot  = document.getElementById('cursor-dot');
-  const ring = document.getElementById('cursor-ring');
-
-  if (dot && ring && window.matchMedia('(pointer: fine)').matches) {
-    let mx = 0, my = 0, rx = 0, ry = 0;
-
-    document.addEventListener('mousemove', e => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.left = mx + 'px';
-      dot.style.top  = my + 'px';
-    });
-
-    (function animateRing() {
-      rx += (mx - rx) * 0.13;
-      ry += (my - ry) * 0.13;
-      ring.style.left = rx + 'px';
-      ring.style.top  = ry + 'px';
-      requestAnimationFrame(animateRing);
-    })();
-
-    const hoverEls = 'a, button, .card-tilt, .promise-card, .hpc, .founder-card, .product-card, .how-step, .vp-card';
-    document.querySelectorAll(hoverEls).forEach(el => {
-      el.addEventListener('mouseenter', () => { ring.classList.add('hover'); dot.classList.add('hover'); });
-      el.addEventListener('mouseleave', () => { ring.classList.remove('hover'); dot.classList.remove('hover'); });
-    });
-
-    document.addEventListener('mousedown', () => ring.classList.add('click'));
-    document.addEventListener('mouseup',   () => ring.classList.remove('click'));
-    document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
-    document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '1'; });
-  }
-
   /* ── Theme Toggle ────────────────────────────────────── */
   const html     = document.documentElement;
   const themeBtn = document.getElementById('theme-toggle');

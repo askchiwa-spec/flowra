@@ -91,7 +91,6 @@ visitors will keep the old files.
 ## Features
 
 - **Dark / Light mode** — system preference detected on first load, toggle saved to localStorage
-- **Custom cursor** — gold dot + ring, hides on touch devices
 - **Loading screen** — FlowrA logo pulse, 1.5s
 - **Scroll progress bar** — gold bar across top of page
 - **Floating words** — large translucent words drift across the hero

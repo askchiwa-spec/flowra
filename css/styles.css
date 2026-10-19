@@ -76,7 +76,6 @@ body {
   color: var(--text-dark);
   line-height: 1.7;
   overflow-x: hidden;
-  cursor: none;
 }
 img { max-width: 100%; display: block; }
 a  { text-decoration: none; color: inherit; transition: color 0.2s; }
@@ -151,23 +150,6 @@ body, #nav, .product-card, .founder-card, .contact-form, .name-card,
 .loader-tagline { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.38); }
 .loader-bar { width: 140px; height: 2px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
 .loader-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); animation: loaderFill 1.5s ease forwards; }
-
-/* ══════════════════════════════════════════════════════
-   CUSTOM CURSOR
-══════════════════════════════════════════════════════ */
-#cursor-dot {
-  width: 8px; height: 8px; border-radius: 50%; background: var(--gold);
-  position: fixed; top: 0; left: 0; z-index: 10000; pointer-events: none;
-  transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s, background 0.2s, opacity 0.2s;
-}
-#cursor-ring {
-  width: 38px; height: 38px; border-radius: 50%; border: 2px solid rgba(212,160,23,0.55);
-  position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none;
-  transform: translate(-50%, -50%);
-}
-#cursor-dot.hover  { width: 12px; height: 12px; background: var(--gold-light); }
-#cursor-ring.hover { width: 56px; height: 56px; border-color: var(--gold); background: rgba(212,160,23,0.07); border-width: 1.5px; }
-#cursor-ring.click { border-color: var(--gold-light); animation: ringClick 0.35s ease; }
 
 /* ══════════════════════════════════════════════════════
    NAV
@@ -787,10 +769,6 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); }
 
   /* toast */
   #toast { white-space: normal; max-width: calc(100vw - 2rem); padding: 0.875rem 1.25rem; }
-
-  /* cursor */
-  body { cursor: auto; }
-  #cursor-dot, #cursor-ring { display: none; }
 }
 
 /* ── max 480px : standard phone ─────────────────────── */
@@ -932,11 +910,6 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); }
   .stats-inner   { grid-template-columns: repeat(4,1fr); }
 }
 
-/* ── Touch / pointer coarse — disable custom cursor ─── */
-@media (hover: none), (pointer: coarse) {
-  body { cursor: auto; }
-  #cursor-dot, #cursor-ring { display: none; }
-}
 
 /* ── Very large screens (2K / 4K) ─────────────────────── */
 @media (min-width: 1600px) {
