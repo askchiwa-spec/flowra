@@ -29,7 +29,6 @@ Replace all placeholder images before going live:
 | `images/hero-bg.jpg` | Hero section background | 1920×1080 px, dark/moody tone |
 | `images/founder-chiwambo.jpg` | CEO photo (Team section) | 400×500 px min |
 | `images/founder-abdul.jpg` | CIO photo (Team section) | 400×500 px min |
-| `images/founder-omar.jpg` | Sales lead photo (Team section) | 400×500 px min |
 | `images/about-team.jpg` | About section office photo | 800×500 px min |
 | `images/og-image.jpg` | Social share / OG preview | 1200×630 px |
 | `images/favicon.png` | Browser tab icon | 512×512 px (or use flowra-logo.png) |

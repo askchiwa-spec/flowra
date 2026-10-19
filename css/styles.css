@@ -460,7 +460,7 @@ body, #nav, .product-card, .founder-card, .contact-form, .name-card,
 /* ══════════════════════════════════════════════════════
    TEAM — FOUNDER CARDS WITH PHOTOS
 ══════════════════════════════════════════════════════ */
-.team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3.5rem; }
+.team-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; margin-top: 3.5rem; max-width: 900px; margin-left: auto; margin-right: auto; }
 
 .founder-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--sh-sm); display: flex; flex-direction: column; }
 .founder-card:hover { box-shadow: var(--sh-lg); border-color: var(--border-mid); }
@@ -482,7 +482,7 @@ body, #nav, .product-card, .founder-card, .contact-form, .name-card,
 [data-theme="dark"] .fc-tag { background: var(--bg-3); color: var(--text-body); border-color: var(--border); }
 [data-theme="dark"] .fc-tag.g { background: rgba(212,160,23,0.12); color: var(--gold-light); border-color: rgba(212,160,23,0.2); }
 
-.team-strength { margin-top: 2rem; background: var(--bg-3); border: 1px solid var(--border); border-radius: var(--r); padding: 2rem 2.5rem; display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
+.team-strength { margin-top: 2rem; background: var(--bg-3); border: 1px solid var(--border); border-radius: var(--r); padding: 2rem 2.5rem; display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
 .ts-item h4 { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
 .ts-item p  { font-size: 0.84rem; color: var(--text-mid); line-height: 1.65; }
 
