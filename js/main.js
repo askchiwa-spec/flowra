@@ -207,32 +207,53 @@
   }
 
   if (form) {
-    form.addEventListener('submit', function(e) {
+    const FALLBACK = 'Please email business@flowratech.com directly.';
+
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
       const btn  = form.querySelector('.submit-btn');
       const orig = btn.textContent;
+
+      // hCaptcha token is required; Web3Forms verifies it server-side
+      // (enable "Block Spam → hCaptcha" in the Web3Forms dashboard).
+      const token = form.querySelector('textarea[name="h-captcha-response"]');
+      if (!token || !token.value) {
+        showToast('Please tick the "I am human" box before sending.');
+        return;
+      }
+
       btn.textContent = 'Sending…';
       btn.disabled    = true;
 
-      var data = new FormData(form);
-
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body:   data
+        body:   new FormData(form)
       })
-      .then(function(res) { return res.json(); })
-      .then(function(json) {
-        if (json.success) {
+      .then(function (res) {
+        // Name the real cause; never mislabel a 4xx/5xx as a network error.
+        if (res.status === 429) throw new Error('Too many messages sent from this network. Wait a few minutes or ' + FALLBACK);
+        if (res.status >= 500)  throw new Error('Our form service is down right now. ' + FALLBACK);
+        return res.json().catch(function () {
+          throw new Error('Unexpected reply from the form service (HTTP ' + res.status + '). ' + FALLBACK);
+        });
+      })
+      .then(function (json) {
+        if (json && json.success) {
           form.reset();
+          if (window.hcaptcha) { try { window.hcaptcha.reset(); } catch (_) {} }
           showToast('Message sent! We\'ll respond within 24 hours. ✓');
         } else {
-          showToast('Error: ' + (json.message || 'Please email business@flowratech.com'));
+          throw new Error((json && json.message ? json.message + '. ' : 'Form was rejected. ') + FALLBACK);
         }
       })
-      .catch(function(err) {
-        showToast('Network error — please email business@flowratech.com directly.');
+      .catch(function (err) {
+        const msg = (err && err.message) ? err.message : '';
+        showToast(msg && !/Failed to fetch|NetworkError|Load failed/i.test(msg)
+          ? msg
+          : 'No connection to the form service. Check your internet or ' + FALLBACK);
+        if (window.hcaptcha) { try { window.hcaptcha.reset(); } catch (_) {} }
       })
-      .finally(function() {
+      .finally(function () {
         btn.textContent = orig;
         btn.disabled    = false;
       });

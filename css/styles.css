@@ -945,3 +945,7 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); }
   .footer-top, .footer-bottom { max-width: 1400px; }
   html { font-size: 17px; }
 }
+
+/* ── hCaptcha widget in contact form ───────────────── */
+.captcha-fg { display: flex; justify-content: flex-start; margin-bottom: 1.25rem; }
+.captcha-fg .h-captcha { max-width: 100%; }

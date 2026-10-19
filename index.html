@@ -27,7 +27,7 @@
   <link rel="preload" href="images/hero-bg.png" as="image">
 
   <link rel="stylesheet" href="css/animations.css?v=20261019">
-  <link rel="stylesheet" href="css/styles.css?v=20261019">
+  <link rel="stylesheet" href="css/styles.css?v=20261020">
 </head>
 <body>
 
@@ -906,6 +906,9 @@
               <div class="fg textarea-fg">
                 <textarea id="message" name="message" placeholder="Tell us about your business and what you need…" rows="4"></textarea>
               </div>
+              <div class="fg captcha-fg">
+                <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" data-theme="light"></div>
+              </div>
               <button type="submit" class="submit-btn">Send message →</button>
             </form>
           </div>
@@ -977,6 +980,7 @@
   <!-- Scroll to top -->
   <button id="scroll-top" aria-label="Back to top">↑</button>
 
-  <script src="js/main.js?v=20261019"></script>
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+  <script src="js/main.js?v=20261020"></script>
 </body>
 </html>
