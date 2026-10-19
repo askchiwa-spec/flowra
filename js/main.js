@@ -96,14 +96,21 @@
     });
   }
 
-  window.closeMob = function () {
+  function closeMob() {
     if (!menuOpen) return;
     menuOpen = false;
     mobMenu.classList.remove('open');
     ham.setAttribute('aria-expanded', 'false');
     const spans = ham.querySelectorAll('span');
     spans[0].style.transform = spans[2].style.transform = spans[1].style.opacity = '';
-  };
+  }
+  if (mobMenu) {
+    mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMob));
+  }
+
+  if (scrollTop) {
+    scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
 
   /* ── Scroll Reveal ───────────────────────────────────── */
   const revealObs = new IntersectionObserver(entries => {
