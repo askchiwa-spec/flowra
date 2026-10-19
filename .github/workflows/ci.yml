@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # Daily live smoke check at 06:00 UTC (09:00 Dar es Salaam)
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate site & config
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: No inline event handlers (strict script-src CSP)
+        run: |
+          if grep -nE '\son[a-z]+=' index.html 404.html; then
+            echo "::error::inline event handler found; move it into js/main.js"; exit 1; fi
+
+      - name: No plain-http resource loads
+        run: |
+          if grep -nE '(src|href)="http://' index.html 404.html; then
+            echo "::error::plain http:// resource"; exit 1; fi
+
+      - name: Shell syntax
+        run: bash -n deploy.sh && bash -n scripts/smoke-check.sh
+
+      - name: JS syntax
+        run: node --check js/main.js
+
+      - name: HTML validate
+        run: |
+          cat > .htmlvalidate.json <<'JSON'
+          { "extends": ["html-validate:recommended"],
+            "rules": { "no-inline-style": "off", "no-trailing-whitespace": "off",
+                       "long-title": "off", "require-sri": "off", "prefer-native-element": "off" } }
+          JSON
+          npx --yes html-validate@8 index.html 404.html
+
+      - name: nginx.conf syntax (stand-in certificate)
+        run: |
+          sudo apt-get install -y -qq nginx >/dev/null
+          T=$(mktemp -d); mkdir -p "$T/le" "$T/logs"
+          openssl req -x509 -newkey rsa:2048 -nodes -keyout "$T/le/privkey.pem" -out "$T/le/fullchain.pem" -days 1 -subj "/CN=ci" 2>/dev/null
+          openssl dhparam -out "$T/le/dh.pem" 2048 2>/dev/null
+          echo "ssl_protocols TLSv1.2 TLSv1.3;" > "$T/le/opts.conf"
+          sed -e "s|/etc/letsencrypt/live/flowratech.com/fullchain.pem|$T/le/fullchain.pem|" \
+              -e "s|/etc/letsencrypt/live/flowratech.com/privkey.pem|$T/le/privkey.pem|" \
+              -e "s|/etc/letsencrypt/options-ssl-nginx.conf|$T/le/opts.conf|" \
+              -e "s|/etc/letsencrypt/ssl-dhparams.pem|$T/le/dh.pem|" \
+              -e "s|/var/log/nginx/|$T/logs/|g" nginx.conf > "$T/site.conf"
+          printf 'events {}\nhttp { include %s/site.conf; }\n' "$T" > "$T/test.conf"
+          sudo nginx -t -p "$T" -c "$T/test.conf"
+
+      - name: CSP allows every external host the page uses
+        run: |
+          csp=$(grep -o 'Content-Security-Policy[^;]*"[^"]*"' nginx.conf)
+          for h in $(grep -ohE 'https://[A-Za-z0-9.-]+' index.html js/main.js | sort -u \
+                     | grep -vE 'www\.(chatisha|watuhcm|flowratech)\.com|wa\.me'); do
+            host=${h#https://}
+            echo "$csp" | grep -qE "$host|\*\.${host#*.}" || { echo "::error::$host not in CSP"; exit 1; }
+          done
+
+  smoke:
+    name: Live smoke check
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/smoke-check.sh
