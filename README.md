@@ -13,7 +13,9 @@ FlowrA Website/
 ├── js/
 │   └── main.js         ← all interactivity
 ├── images/
-│   ├── flowra-logo.png ← logo (exists)
+│   ├── hero-bg.webp / hero-bg-960.webp ← hero background (desktop / phone)
+│   ├── lion-watermark.webp, favicon.png, apple-touch-icon.png
+│   ├── flowra-logo-160.webp, og-image.jpg, founder-*.jpg
 │   └── ...             ← add images listed below
 ├── 404.html            ← real not-found page
 ├── nginx.conf          ← production nginx vhost (single source of truth)
@@ -29,10 +31,7 @@ Replace all placeholder images before going live:
 
 | File | Usage | Recommended size |
 |---|---|---|
-| `images/hero-bg.jpg` | Hero section background | 1920×1080 px, dark/moody tone |
 | `images/about-team.jpg` | About section office photo | 800×500 px min |
-| `images/og-image.jpg` | Social share / OG preview | 1200×630 px |
-| `images/favicon.png` | Browser tab icon | 512×512 px (or use flowra-logo.png) |
 
 To swap a photo, simply replace the `src` attribute in `index.html`.  
 Search for `<!-- Replace` to find all placeholder comments.
@@ -105,7 +104,7 @@ visitors will keep the old files.
 
 ## What to update before launch
 
-1. Replace all placeholder images (see table above)
+1. Replace the remaining placeholder image (see table above). Keep images small: WebP/JPEG, max 1920 px wide.
 2. WhatsApp number is already set to `+255 765 111131`
 3. Emails are already set under `@flowratech.com`
 4. Domain is already set to `flowratech.com` in `nginx.conf`

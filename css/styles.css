@@ -211,7 +211,7 @@ body, #nav, .product-card, .founder-card, .contact-form, .name-card,
   min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 72px; z-index: 3;
   background:
     linear-gradient(135deg, rgba(6,12,26,0.95) 0%, rgba(15,35,71,0.82) 50%, rgba(6,12,26,0.93) 100%),
-    url('../images/hero-bg.png') center / cover no-repeat,
+    url('../images/hero-bg.webp') center / cover no-repeat,
     linear-gradient(135deg, #060C1A 0%, #1A3A6E 60%, #0F2347 100%);
 }
 .hero-mesh { position: absolute; inset: 0; background: radial-gradient(ellipse 72% 70% at 80% 50%, rgba(212,160,23,0.08) 0%, transparent 65%), radial-gradient(ellipse 52% 62% at 15% 30%, rgba(26,84,153,0.42) 0%, transparent 55%); pointer-events: none; }
@@ -604,7 +604,7 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); }
 .site-watermark {
   position: fixed;
   inset: 0;
-  background: url('../images/Lion Roar Flowra.png') center / 72vmin no-repeat;
+  background: url('../images/lion-watermark.webp') center / 72vmin no-repeat;
   opacity: 0.07;
   mix-blend-mode: multiply;   /* white bg of PNG becomes invisible; only lion shape shows */
   pointer-events: none;
@@ -922,3 +922,13 @@ footer { background: var(--navy-dark); border-top: 3px solid var(--gold); }
 /* ── hCaptcha widget in contact form ───────────────── */
 .captcha-fg { display: flex; justify-content: flex-start; margin-bottom: 1.25rem; }
 .captcha-fg .h-captcha { max-width: 100%; }
+
+/* ── Phones: smaller hero background (60 KB instead of 157 KB) ── */
+@media (max-width: 768px) {
+  #hero {
+    background:
+      linear-gradient(135deg, rgba(6,12,26,0.95) 0%, rgba(15,35,71,0.82) 50%, rgba(6,12,26,0.93) 100%),
+      url('../images/hero-bg-960.webp') center / cover no-repeat,
+      linear-gradient(135deg, #060C1A 0%, #1A3A6E 60%, #0F2347 100%);
+  }
+}
