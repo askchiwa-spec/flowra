@@ -55,7 +55,7 @@
   </div>
 
   <!-- ════════════════ NAV ════════════════ -->
-  <nav id="nav" role="navigation" aria-label="Main navigation">
+  <nav id="nav" aria-label="Main navigation">
     <div class="nav-inner">
 
       <a href="#home" class="nav-logo" aria-label="FlowrA Home">
@@ -78,7 +78,7 @@
       </div>
 
       <div class="nav-actions">
-        <button id="theme-toggle" class="theme-btn" aria-label="Toggle dark/light mode">
+        <button type="button" id="theme-toggle" class="theme-btn" aria-label="Toggle dark/light mode">
           <!-- Moon: shown in light mode -->
           <svg class="theme-icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
@@ -96,7 +96,7 @@
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
           </svg>
         </button>
-        <button class="ham" id="ham" aria-label="Open menu" aria-expanded="false">
+        <button type="button" class="ham" id="ham" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -163,7 +163,7 @@
         </div>
 
         <!-- Right: phone mockup -->
-        <div class="hero-visual a3" aria-label="Chatisha WhatsApp product preview">
+        <div class="hero-visual a3" role="img" aria-label="Chatisha WhatsApp product preview">
           <div class="phone-outer">
             <div class="phone-frame">
               <div class="phone-notch"></div>
@@ -196,15 +196,15 @@
           </div>
 
           <!-- Floating stat badges -->
-          <div class="hv-badge hv-b1" aria-label="70% no-show reduction">
+          <div class="hv-badge hv-b1" role="img" aria-label="70% no-show reduction">
             <span class="hv-num">70%</span>
             <span class="hv-lbl">No-show reduction</span>
           </div>
-          <div class="hv-badge hv-b2" aria-label="Available 24/7">
+          <div class="hv-badge hv-b2" role="img" aria-label="Available 24/7">
             <span class="hv-num">24/7</span>
             <span class="hv-lbl">Always available</span>
           </div>
-          <div class="hv-badge hv-b3" aria-label="Go live in 3 days">
+          <div class="hv-badge hv-b3" role="img" aria-label="Go live in 3 days">
             <span class="hv-num">7 days</span>
             <span class="hv-lbl">Go live</span>
           </div>
@@ -393,7 +393,7 @@
               <li>Pre-built templates: salons, clinics, hotels, restaurants</li>
             </ul>
             <table class="pricing-table">
-              <thead><tr><th>Tier</th><th>Monthly</th><th>Setup</th></tr></thead>
+              <thead><tr><th scope="col">Tier</th><th scope="col">Monthly</th><th scope="col">Setup</th></tr></thead>
               <tbody>
                 <tr><td>Starter</td><td>TZS 139,000</td><td>TZS 200,000</td></tr>
                 <tr><td>Growth</td><td>TZS 179,000</td><td>TZS 200,000</td></tr>
@@ -423,7 +423,7 @@
               <li><strong>WATU Attend</strong> — Attendance &amp; shift management</li>
             </ul>
             <table class="pricing-table">
-              <thead><tr><th>Tier</th><th>Staff Range</th><th>Monthly</th></tr></thead>
+              <thead><tr><th scope="col">Tier</th><th scope="col">Staff Range</th><th scope="col">Monthly</th></tr></thead>
               <tbody>
                 <tr><td>Starter</td><td>1–20</td><td>USD 99$</td></tr>
                 <tr><td>Growth</td><td>21–50</td><td>USD 139$</td></tr>
@@ -453,7 +453,7 @@
               <li>Multi-client support for agencies</li>
             </ul>
             <table class="pricing-table">
-              <thead><tr><th>Tier</th><th>Users</th><th>USD / mo</th></tr></thead>
+              <thead><tr><th scope="col">Tier</th><th scope="col">Users</th><th scope="col">USD / mo</th></tr></thead>
               <tbody>
                 <tr><td>Starter</td><td>1–2</td><td>$49</td></tr>
                 <tr><td>Growth</td><td>3–5</td><td>$99</td></tr>
@@ -499,7 +499,7 @@
           <h3 style="font-family:'Playfair Display',serif;font-size:1.375rem;color:var(--text-dark);margin-bottom:1rem;font-weight:700">Why Enterprises Choose FlowrA</h3>
           <div class="table-scroll">
           <table class="feat-table">
-            <thead><tr><th>Requirement</th><th>How FlowrA Delivers</th></tr></thead>
+            <thead><tr><th scope="col">Requirement</th><th scope="col">How FlowrA Delivers</th></tr></thead>
             <tbody>
               <tr><td>Security</td><td>Encryption at rest and in transit. Audit logs. Multi-tenant data isolation.</td></tr>
               <tr><td>Compliance</td><td>PAYE, NSSF, WCF, TRA, BOT — built in from day one.</td></tr>
@@ -590,7 +590,7 @@
           <h3 style="font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--text-dark);margin-bottom:1rem;font-weight:700">What We Can Build For You</h3>
           <div class="table-scroll">
           <table class="custom-table">
-            <thead><tr><th>Service</th><th>Examples</th></tr></thead>
+            <thead><tr><th scope="col">Service</th><th scope="col">Examples</th></tr></thead>
             <tbody>
               <tr><td>Payment integrations</td><td>M-Pesa, Tigo Pesa, Airtel Money, AzamPay, Cellulant, Stripe, PayPal, bank APIs</td></tr>
               <tr><td>WhatsApp automation</td><td>Custom bots, workflows, conversational AI for your business</td></tr>
@@ -870,7 +870,7 @@
               <input type="hidden" name="access_key" value="28d21b14-8cb2-4ba8-b151-0e7a9ee998d2">
               <input type="hidden" name="subject"    value="New Enquiry — FlowrA Website">
               <input type="hidden" name="from_name"  value="FlowrA Website">
-              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1">
               <div class="form-row">
                 <div class="fg">
                   <input type="text" id="first-name" name="first-name" placeholder=" " required autocomplete="given-name">
@@ -979,7 +979,7 @@
   </a>
 
   <!-- Scroll to top -->
-  <button id="scroll-top" aria-label="Back to top">↑</button>
+  <button type="button" id="scroll-top" aria-label="Back to top">↑</button>
 
   <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
   <script src="js/main.js?v=20261020"></script>
