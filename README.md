@@ -15,7 +15,10 @@ FlowrA Website/
 ├── images/
 │   ├── flowra-logo.png ← logo (exists)
 │   └── ...             ← add images listed below
-├── nginx.conf          ← VPS server config
+├── 404.html            ← real not-found page
+├── nginx.conf          ← production nginx vhost (single source of truth)
+├── deploy.sh           ← idempotent VPS deploy + verify
+├── scripts/smoke-check.sh ← post-deploy live checks
 ├── .gitignore
 └── README.md
 ```
@@ -49,58 +52,43 @@ git push -u origin main
 
 ## VPS deployment
 
-### 1. Upload files
+`nginx.conf` in this repo is the **only** nginx config. `deploy.sh` installs it.
+Never edit `/etc/nginx/sites-available/flowra` by hand on the server.
+
+First time, on the VPS as root:
 
 ```bash
-# From your local machine:
-rsync -avz --exclude '.git' "FlowrA Website/" user@YOUR_VPS_IP:/var/www/flowra/
+git clone https://github.com/askchiwa-spec/flowra.git /var/www/flowra
+sudo bash /var/www/flowra/deploy.sh
 ```
 
-Or clone directly on the server after pushing to GitHub:
+Every later deploy (after `git push origin main`):
 
 ```bash
-sudo mkdir -p /var/www/flowra
-sudo chown $USER:$USER /var/www/flowra
-git clone git@github.com:YOUR_USERNAME/flowra-website.git /var/www/flowra
+sudo bash /var/www/flowra/deploy.sh
 ```
 
-### 2. Configure nginx
+The script is idempotent: it installs missing packages, resets the webroot to
+`origin/main`, issues the Let's Encrypt certificate if absent, installs
+`nginx.conf`, runs `nginx -t` before reloading, confirms the live `index.html`
+matches the deployed commit, then runs `scripts/smoke-check.sh`.
+
+From your laptop, after any deploy:
 
 ```bash
-sudo cp /var/www/flowra/nginx.conf /etc/nginx/sites-available/flowra
-sudo ln -s /etc/nginx/sites-available/flowra /etc/nginx/sites-enabled/flowra
-sudo nginx -t        # test config
-sudo systemctl reload nginx
+bash scripts/smoke-check.sh
 ```
 
-### 3. SSL certificate (free, via Let's Encrypt)
+### Cache busting
 
-```bash
-sudo apt install certbot python3-certbot-nginx -y
-sudo certbot --nginx -d flowratech.com -d www.flowratech.com
-```
+CSS and JS are cached for one year. When you change `css/*.css` or `js/main.js`,
+bump the `?v=` value on the three asset links in `index.html` or returning
+visitors will keep the old files.
 
-Certbot auto-renews. Verify: `sudo certbot renew --dry-run`
+### DNS
 
-### 4. Update DNS
-
-Point your domain A records to the VPS IP:
-- `flowratech.com` → `YOUR_VPS_IP`
-- `www.flowratech.com` → `YOUR_VPS_IP`
-
-### Deploying updates
-
-```bash
-# On the VPS:
-cd /var/www/flowra
-git pull origin main
-```
-
-Or push from local with rsync:
-
-```bash
-rsync -avz --exclude '.git' --exclude '.DS_Store' "FlowrA Website/" user@YOUR_VPS_IP:/var/www/flowra/
-```
+`flowratech.com` and `www.flowratech.com` A records point at the VPS.
+`www` is canonical; apex and plain HTTP redirect to it.
 
 ## Features
 
@@ -124,5 +112,5 @@ rsync -avz --exclude '.git' --exclude '.DS_Store' "FlowrA Website/" user@YOUR_VP
 2. WhatsApp number is already set to `+255 765 111131`
 3. Emails are already set under `@flowratech.com`
 4. Domain is already set to `flowratech.com` in `nginx.conf`
-5. Connect contact form to a backend (Formspree, Netlify Forms, or custom API)
+5. In the Web3Forms dashboard, set **Block Spam → hCaptcha** so the captcha is enforced server-side
 6. Add Google Analytics or your preferred analytics script
