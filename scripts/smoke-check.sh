@@ -36,6 +36,19 @@ echo "$H" | grep -q "includesubdomains" && bad "HSTS includeSubDomains is ON (sh
 echo "$H" | grep -qE '^server: nginx/[0-9]' && bad "nginx version disclosed" || pass "server_tokens off"
 echo "$H" | grep -q '^cache-control: no-cache' && pass "html no-cache" || bad "html cache-control not no-cache"
 
+echo "── Outreach tracking endpoints"
+[ "$(code "${BASE}/o/0123456789ab.gif")" = 404 ] && pass "open pixel rejects wrong id length" || bad "open pixel accepted a bad id"
+[ "$(code "${BASE}/o/0123456789.gif")" = 200 ] && pass "open pixel /o/<id>.gif → 200" || bad "open pixel not 200"
+T="$(hdrs "${BASE}/o/0123456789.gif")"
+echo "$T" | grep -q '^content-type: image/gif' && pass "open pixel is image/gif" || bad "open pixel content-type wrong"
+echo "$T" | grep -q '^cache-control: no-cache' && pass "open pixel no-cache" || bad "open pixel is cacheable"
+[ "$(code "${BASE}/go/0123456789/demo")" = 302 ] && pass "/go/<id>/demo → 302" || bad "/go/<id>/demo not 302"
+loc="$(curl -sI --max-time 20 "${BASE}/go/0123456789/demo" | tr -d '\r' | awk 'tolower($1)=="location:"{print $2}')"
+[ "$loc" = "https://calendly.com/askchiwa/30min" ] && pass "demo redirect → Calendly" || bad "demo redirect target: ${loc:-none}"
+[ "$(code "${BASE}/go/0123456789/pricing")" = 302 ] && pass "/go/<id>/pricing → 302" || bad "/go/<id>/pricing not 302"
+[ "$(code "${BASE}/go/0123456789/growth")" = 302 ] && pass "/go/<id>/growth → 302" || bad "/go/<id>/growth not 302"
+[ "$(code "${BASE}/go/0123456789/other")" = 404 ] && pass "unknown /go target → 404" || bad "unknown /go target not 404"
+
 echo "── Exposure"
 for p in deploy.sh README.md nginx.conf .gitignore .git/HEAD .git/config scripts/smoke-check.sh; do
   c="$(code "${BASE}/${p}")"
